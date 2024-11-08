@@ -90,12 +90,16 @@ async def stop_img(message: types.Message):
 
 @root.message()
 async def ai(message: types.Message, state: FSMContext):    
-    await state.set_state(Work.process)
-    await state.update_data(name=message.from_user.full_name, id=message.from_user.id, user=message.from_user.username, inf=message.text, utc=message.date)
-    data = await state.get_data()
-    file = open("app/db/information.txt", "a", encoding='utf-8')
-    file.write(f"{data["name"]}|{data["id"]}|{data["user"]}|{data["inf"]}|{data["utc"]}\n")
-    file.close()
-    res = await generate(message.text)
-    await message.answer(res.choices[0].message.content)
-    await state.clear()
+    try:
+       await state.set_state(Work.process)
+       await state.update_data(name=message.from_user.full_name, id=message.from_user.id, user=message.from_user.username, inf=message.text, utc=message.date)
+       data = await state.get_data()
+       file = open("app/db/information.txt", "a", encoding='utf-8')
+       file.write(f"{data["name"]}|{data["id"]}|{data["user"]}|{data["inf"]}|{data["utc"]}\n")
+       file.close()
+       res = await generate(message.text)
+       await message.answer(res.choices[0].message.content)
+       await state.clear()
+    except: 
+        await message.answer("Qandaydur hatolik yuz berdi /start buyrug'i orqali botni qayta ishga tushiring")
+        await state.clear()
