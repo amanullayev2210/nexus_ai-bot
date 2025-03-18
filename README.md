@@ -27,4 +27,4 @@ Telegram uchun foydalanuvchilarning savollariga javob beruvchi sun’iy intellek
     
     4. main.py ni ishga tushuring
 
-🔗 GitHub: [https://github.com/amanullayev2210/Cain_market-bot](https://github.com/amanullayev2210/nexus_ai-bot]
+🔗 GitHub: [https://github.com/amanullayev2210/nexus_ai-bot]
