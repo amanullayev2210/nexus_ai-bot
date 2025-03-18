@@ -5,7 +5,7 @@ from app.handlers import root
 import logging
 import sys
 
-bot = Bot(token=TG_TOKEN)
+bot = Bot(token=TG_TOKEN) # bu yerga @Botfather dan yaratgan bot ingizni tokeini qo'ying
 dp = Dispatcher()
 
 

@@ -1,5 +1,5 @@
-import asyncio
 from mistralai import Mistral
+from collections import deque
 from config import AI_TOKEN
 
 
@@ -18,6 +18,7 @@ If a user starts with "Assalamu alaykum," respond with: "Valaykum assalom."
 Responses should remain friendly, thoughtful, and constructive, providing clear and useful communication. Be careful not to overuse phrases or make the responses sound too repetitive.
 """
 
+<<<<<<< HEAD
 
 
 async def generate(content):
@@ -30,4 +31,25 @@ async def generate(content):
     ])
     if res is not None:
         return res
+=======
+message_history =  {}
+
+async def generate(id, content):
+    s = Mistral(
+        api_key=AI_TOKEN) # bu yerga mistral ai dan olgan key ingizni qo'ying
+    if id not in message_history:
+        message_history[id] = deque(maxlen=20)  
+
+    message_history[id].append({"role": "user", "content": content})
+
+    res = await s.chat.complete_async(
+        model="mistral-large-latest",
+        messages=[{"role": "system", "content": directive}] + list(message_history[id])
+    )
+    if res is not None:
+        bot_reply = res.choices[0].message.content
+        message_history[id].append({"role": "assistant", "content": bot_reply})
+
+        return bot_reply
+>>>>>>> 542d6f8 (Update optimize code)
 

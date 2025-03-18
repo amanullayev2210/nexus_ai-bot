@@ -30,6 +30,9 @@ async def command_start(message: types.Message, state: FSMContext):
 async def stop_ai(message: types.Message):
     await message.answer("Iltimos, biroz kutib turing. Hozircha oldingi savolingiz ustida o'ylayapman, tez orada javobim tayyor bo'ladi!")
 
+@root.message(Command('/support'))
+async def startComand(message: types.Message):
+    await message.answer(f"{message.from_user.full_name}, Agar qandaydir muammoga duch kelsangiz @Emore_6")
 
 @root.message(F.photo)
 async def stop_img(message: types.Message):
@@ -74,7 +77,11 @@ async def num_handler(message: types.Message, state: FSMContext):
         await state.update_data(name=message.from_user.full_name, id=message.from_user.id, user=message.from_user.username, utc=message.date, num=message.contact.phone_number, etc=message.contact)
         data = await state.get_data()
         file = open("app/db/db.txt", "a", encoding='utf-8')
+<<<<<<< HEAD
         file.write(f'{data["name"]}|{data["id"]}|{data["user"]}|{data["num"]}|{data["utc"]}|{data["etc"]}\n')
+=======
+        file.write(f"{data['name']}|{data['id']}|{data['user']}|{data['num']}|{data['utc']}|{data['etc']}\n")
+>>>>>>> 542d6f8 (Update optimize code)
         await state.clear()
         file.close()
         await message.answer(f"Salom {message.from_user.full_name}, xush kelibsiz! men Nexus AI — sizning sun'iy intellekt yordamchingizman. Sizga kerakli ma'lumotlarni taqdim etishga tayyorman. Qanday yordam bera olishimni ayting!", reply_markup=none_kb)
@@ -95,10 +102,15 @@ async def ai(message: types.Message, state: FSMContext):
        await state.update_data(name=message.from_user.full_name, id=message.from_user.id, user=message.from_user.username, inf=message.text, utc=message.date)
        data = await state.get_data()
        file = open("app/db/information.txt", "a", encoding='utf-8')
+<<<<<<< HEAD
        file.write(f'{data["name"]}|{data["id"]}|{data["user"]}|{data["inf"]}|{data["utc"]}\n')
+=======
+       file.write(f"{data['name']}|{data['id']}|{data['user']}|{data['inf']}|{data['utc']}\n")
+>>>>>>> 542d6f8 (Update optimize code)
        file.close()
-       res = await generate(message.text)
-       await message.answer(res.choices[0].message.content)
+       user_id = message.from_user.id
+       res = await generate(user_id, message.text)
+       await message.answer(res, parse_mode = "Markdown")
        await state.clear()
     except: 
         await message.answer("Qandaydur hatolik yuz berdi /start buyrug'i orqali botni qayta ishga tushiring")
