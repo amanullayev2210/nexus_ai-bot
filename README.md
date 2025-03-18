@@ -17,14 +17,14 @@ Telegram uchun foydalanuvchilarning savollariga javob beruvchi sun’iy intellek
     
     2. Talab qilinadigan kutubxonalarni o‘rnating
     
-    3. pip install -r requirements.txt
+    2.1 pip install -r requirements.txt
 
-    4. Tokenlarni sozlang:
+    3. Tokenlarni sozlang:
 
-    5. main.py faylida TOKEN ni o‘zgartiring  
+    3.1 main.py faylida TOKEN ni o‘zgartiring  
 
-    6. app/handlers/generatsiya.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
+    3.2 app/handlers/generatsiya.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
     
-    7. main.py ni ishga tushuring
+    4. main.py ni ishga tushuring
 
 🔗 GitHub: [https://github.com/amanullayev2210/Cain_market-bot](https://github.com/amanullayev2210/nexus_ai-bot]
