@@ -17,13 +17,13 @@ Telegram uchun foydalanuvchilarning savollariga javob beruvchi sun’iy intellek
     
     2. Talab qilinadigan kutubxonalarni o‘rnating
     
-    2.1 pip install -r requirements.txt
+        2.1 pip install -r requirements.txt
 
     3. Tokenlarni sozlang:
 
-    3.1 main.py faylida TOKEN ni o‘zgartiring  
+        3.1 main.py faylida TOKEN ni o‘zgartiring  
 
-    3.2 app/handlers/generatsiya.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
+        3.2 app/handlers/generatsiya.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
     
     4. main.py ni ishga tushuring
 
