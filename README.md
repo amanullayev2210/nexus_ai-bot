@@ -23,7 +23,7 @@ Telegram uchun foydalanuvchilarning savollariga javob beruvchi sun’iy intellek
 
         3.1 main.py faylida TOKEN ni o‘zgartiring  
 
-        3.2 app/handlers/generatsiya.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
+        3.2 app/handlers/generators.py faylida AI_TOKEN ga Mistral AI dan olingan kalitni qo‘shing
     
     4. main.py ni ishga tushuring
 
