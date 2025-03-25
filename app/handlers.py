@@ -17,7 +17,7 @@ root = Router()
 async def command_start(message: types.Message, state: FSMContext):
     file = open("app/db/db.txt", "r", encoding='utf-8')
     lines = [line.replace("\n", "").split("|")[1] for line in file.readlines()]
-    file.close
+    file.close()
     check_id = str(message.from_user.id) 
     if check_id in lines:
         await message.answer(f"Salom {message.from_user.full_name}, xush kelibsiz! men Nexus AI — sizning sun'iy intellekt yordamchingizman. Sizga kerakli ma'lumotlarni taqdim etishga tayyorman. Qanday yordam bera olishimni ayting!", reply_markup=none_kb)
