@@ -18,8 +18,6 @@ If a user starts with "Assalamu alaykum," respond with: "Valaykum assalom."
 Responses should remain friendly, thoughtful, and constructive, providing clear and useful communication. Be careful not to overuse phrases or make the responses sound too repetitive.
 """
 
-<<<<<<< HEAD
-
 
 async def generate(content):
     s = Mistral(
@@ -31,7 +29,7 @@ async def generate(content):
     ])
     if res is not None:
         return res
-=======
+
 message_history =  {}
 
 async def generate(id, content):
@@ -51,5 +49,4 @@ async def generate(id, content):
         message_history[id].append({"role": "assistant", "content": bot_reply})
 
         return bot_reply
->>>>>>> 542d6f8 (Update optimize code)
 
